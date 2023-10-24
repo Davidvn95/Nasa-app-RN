@@ -6,7 +6,7 @@ export default function FiveDays({ fiveDaysData }) {
         <View style={styles.container}>
             <Text style={styles.title}>Last 5 days</Text>
             <ScrollView style={styles.content}>
-                {fiveDaysData?.map((day) => {
+                {fiveDaysData?.reverse().map((day) => {
                     return <PostImages key={day.title} {...day} />
                 })}
             </ScrollView>

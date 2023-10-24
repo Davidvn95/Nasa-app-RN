@@ -4,8 +4,7 @@ import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 const PostImages = ({ title, url, date, hdurl, explanation }) => {
     const { navigate } = useNavigation()
     const handleNavigate = () => { 
-        navigate('Detail', { title, hdurl, date, explanation }) 
-    
+        navigate('Detail', { title, hdurl, date, explanation })
     }
     return (
             <View style={styles.container}>

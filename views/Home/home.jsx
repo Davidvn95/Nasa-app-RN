@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import Header from '../../components/Header'
 import TodayImage from '../../components/TodayImage'
 import fetchApi from '../../utils/fetch'
@@ -15,7 +15,7 @@ export default function Home() {
             const data = await fetchApi()
             setDataTodayImage(data)
         }
-        const fetchLast5days = async() => {
+        const fetchLast5days = async () => {
             const { today, fiveDaysAgo } = getDays()
             const urlParam = `&start_date=${fiveDaysAgo}&end_date=${today}`
             const data = await fetchApi(urlParam)
@@ -28,7 +28,7 @@ export default function Home() {
         <View style={styles.container}>
             <Header />
             <TodayImage {...dataTodayImage} />
-            <FiveDays fiveDaysData={lastFiveDaysData}/>
+            <FiveDays fiveDaysData={lastFiveDaysData} />
         </View>
     )
 }
